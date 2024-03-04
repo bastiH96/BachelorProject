@@ -1,4 +1,4 @@
-﻿namespace WPFToDoApp;
+namespace WPFToDoApp;
 using System.Configuration;
 using System.Data;
 using System.Windows;
@@ -8,5 +8,6 @@ using System.Windows;
 /// </summary>
 public partial class App : Application
 {
+    
 }
 
