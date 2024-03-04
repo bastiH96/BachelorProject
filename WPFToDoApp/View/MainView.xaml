@@ -18,6 +18,9 @@
             <Button
                 Content="Home"
                 Command="{Binding OpenTaskPageCommand}"/>
+            <Button
+                Content="1000 Tasks"
+                Command="{Binding OpenThousendTasksPageCommand}"/>
         </ListBox>
             
 

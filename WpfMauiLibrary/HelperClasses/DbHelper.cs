@@ -9,6 +9,7 @@ public static class DbHelper
         CreateDirectoryIfNotExist();
 
         new ToDoTaskDbAccess(Constants.DbMauiFullPath).CreateTable();
+        new ToDoTaskDbAccess(Constants.DbMaui1000TasksFullPath).CreateTable();
     }
 
     public static void CreateWpfDatabase()
@@ -16,6 +17,7 @@ public static class DbHelper
         CreateDirectoryIfNotExist();
 
         new ToDoTaskDbAccess(Constants.DbWpfFullPath).CreateTable();
+        new ToDoTaskDbAccess(Constants.DbWpf1000TasksFullPath).CreateTable();
     }
 
     private static void CreateDirectoryIfNotExist()
