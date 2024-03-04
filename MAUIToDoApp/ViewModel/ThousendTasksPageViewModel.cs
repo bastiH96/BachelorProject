@@ -1,4 +1,4 @@
-namespace WPFToDoApp.ViewModel;
+namespace MAUIToDoApp.ViewModel;
 
 using System.Collections.ObjectModel;
 using CommunityToolkit.Mvvm.ComponentModel;
@@ -7,10 +7,11 @@ using WpfMauiLibrary.HelperClasses;
 using WpfMauiLibrary.Models;
 using WpfMauiLibrary.Services.DataAccess;
 
-public partial class ThousendTaskPageViewModel : ObservableObject
+public partial class ThousendTasksPageViewModel : ObservableObject
 {
     [ObservableProperty] private ObservableCollection<ToDoTask> openTasks = [];
-    private readonly ToDoTaskDbAccess dbAccess = new(Constants.DbWpf1000TasksFullPath);
+    [ObservableProperty] private ObservableCollection<ToDoTask> closedTasks = [];
+    private readonly ToDoTaskDbAccess dbAccess = new(Constants.DbMaui1000TasksFullPath);
 
     [RelayCommand]
     public void CreateThousendTasks()

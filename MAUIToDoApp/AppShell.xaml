@@ -13,5 +13,11 @@
             ContentTemplate="{DataTemplate local:MainPage}"
             Route="MainPage" />
     </FlyoutItem>
+    <FlyoutItem
+    Title="1000 Tasks">
+        <ShellContent
+        ContentTemplate="{DataTemplate local:ThousendTasksPage}"
+        Route="ThousendTasksPage" />
+    </FlyoutItem>
 
 </Shell>
