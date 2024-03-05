@@ -21,6 +21,9 @@
             <Button
                 Content="1000 Tasks"
                 Command="{Binding OpenThousendTasksPageCommand}"/>
+            <Button
+                Content="Mathematical Calculation"
+                Command="{Binding OpenMathematicalCalcPageCommand}"/>
         </ListBox>
             
 

@@ -6,118 +6,120 @@
              x:Class="MAUIToDoApp.View.ThousendTasksPage"
              x:DataType="vm:ThousendTasksPageViewModel"
              Title="ThousendTasksPage">
-    <VerticalStackLayout>
-        <Label
-        Text="Open Tasks"/>
-        <CollectionView
-        ItemsSource="{Binding OpenTasks}">
-            <CollectionView.ItemTemplate>
-                <DataTemplate
-                x:DataType="{x:Type model:ToDoTask}">
-                    <Grid
-                    RowSpacing="0"
-                    ColumnDefinitions="Auto, *, Auto, Auto">
-                        <Button
-                        MinimumHeightRequest="20"
-                        MinimumWidthRequest="20"
-                        ImageSource="square_regular.png"
-                        BackgroundColor="Transparent"
-                        Command="{Binding Source={RelativeSource AncestorType={x:Type vm:MainPageViewModel}}, Path=ChangeStatusCommand}"
-                        CommandParameter="{Binding .}"
-                        VerticalOptions="Center"/>
-                        <Entry
-                        x:Name="entryField"
-                        Grid.Column="1"
-                        VerticalOptions="Center"
-                        IsReadOnly="{Binding IsEntryFieldReadOnly}"
-                        Text="{Binding Content}"/>
-                        <Button
-                        Grid.Column="2"
-                        MinimumHeightRequest="35"
-                        MinimumWidthRequest="35"
-                        Padding="0"
-                        Margin="3"
-                        ImageSource="pen_square_regular.png"
-                        BackgroundColor="Blue"
-                        Command="{Binding Source={RelativeSource AncestorType={x:Type vm:MainPageViewModel}}, Path=EditTaskCommand}"
-                        CommandParameter="{Binding .}"
-                        VerticalOptions="Center"/>
-                        <Button
-                        Grid.Column="3"
-                        MinimumHeightRequest="35"
-                        MinimumWidthRequest="35"
-                        Padding="0"
-                        Margin="3"
-                        ImageSource="trash_can_regular.png"
-                        BackgroundColor="Red"
-                        Command="{Binding Source={RelativeSource AncestorType={x:Type vm:MainPageViewModel}}, Path=DeleteTaskCommand}"
-                        CommandParameter="{Binding .}"
-                        VerticalOptions="Center"/>
-                    </Grid>
-                </DataTemplate>
-            </CollectionView.ItemTemplate>
-        </CollectionView>
-        <Label
-        Text="Closed Tasks"/>
-        <CollectionView
-                ItemsSource="{Binding ClosedTasks}">
-            <CollectionView.ItemTemplate>
-                <DataTemplate
-                x:DataType="{x:Type model:ToDoTask}">
-                    <Grid
-                    RowSpacing="0"
-                    ColumnDefinitions="Auto, *, Auto, Auto">
-                        <Button
-                         MinimumHeightRequest="20"
-                         MinimumWidthRequest="20"
-                         ImageSource="square_check_regular.png"
-                         BackgroundColor="Transparent"
-                         Command="{Binding Source={RelativeSource AncestorType={x:Type vm:MainPageViewModel}}, Path=ChangeStatusCommand}"
-                         CommandParameter="{Binding .}"
-                         VerticalOptions="Center"/>
-                        <Entry
-                         x:Name="entryField"
-                         Grid.Column="1"
-                         VerticalOptions="Center"
-                         IsReadOnly="{Binding IsEntryFieldReadOnly}"
-                         Text="{Binding Content}"/>
-                        <Button
-                         Grid.Column="2"
-                         MinimumHeightRequest="35"
-                         MinimumWidthRequest="35"
-                         Padding="0"
-                         Margin="3"
-                         ImageSource="pen_square_regular.png"
-                         BackgroundColor="Blue"
-                         Command="{Binding Source={RelativeSource AncestorType={x:Type vm:MainPageViewModel}}, Path=EditTaskCommand}"
-                         CommandParameter="{Binding .}"
-                         VerticalOptions="Center"/>
-                        <Button
-                         Grid.Column="3"
-                         MinimumHeightRequest="35"
-                         MinimumWidthRequest="35"
-                         Padding="0"
-                         Margin="3"
-                         ImageSource="trash_can_regular.png"
-                         BackgroundColor="Red"
-                         Command="{Binding Source={RelativeSource AncestorType={x:Type vm:MainPageViewModel}}, Path=DeleteTaskCommand}"
-                         CommandParameter="{Binding .}"
-                         VerticalOptions="Center"/>
-                    </Grid>
-                </DataTemplate>
-            </CollectionView.ItemTemplate>
-        </CollectionView>
+    <ScrollView>
+        <VerticalStackLayout>
+            <Label
+            Text="Open Tasks"/>
+            <CollectionView
+            ItemsSource="{Binding OpenTasks}">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate
+                    x:DataType="{x:Type model:ToDoTask}">
+                        <Grid
+                        RowSpacing="0"
+                        ColumnDefinitions="Auto, *, Auto, Auto">
+                            <Button
+                            MinimumHeightRequest="20"
+                            MinimumWidthRequest="20"
+                            ImageSource="square_regular.png"
+                            BackgroundColor="Transparent"
+                            Command="{Binding Source={RelativeSource AncestorType={x:Type vm:MainPageViewModel}}, Path=ChangeStatusCommand}"
+                            CommandParameter="{Binding .}"
+                            VerticalOptions="Center"/>
+                            <Entry
+                            x:Name="entryField"
+                            Grid.Column="1"
+                            VerticalOptions="Center"
+                            IsReadOnly="{Binding IsEntryFieldReadOnly}"
+                            Text="{Binding Content}"/>
+                            <Button
+                            Grid.Column="2"
+                            MinimumHeightRequest="35"
+                            MinimumWidthRequest="35"
+                            Padding="0"
+                            Margin="3"
+                            ImageSource="pen_square_regular.png"
+                            BackgroundColor="Blue"
+                            Command="{Binding Source={RelativeSource AncestorType={x:Type vm:MainPageViewModel}}, Path=EditTaskCommand}"
+                            CommandParameter="{Binding .}"
+                            VerticalOptions="Center"/>
+                            <Button
+                            Grid.Column="3"
+                            MinimumHeightRequest="35"
+                            MinimumWidthRequest="35"
+                            Padding="0"
+                            Margin="3"
+                            ImageSource="trash_can_regular.png"
+                            BackgroundColor="Red"
+                            Command="{Binding Source={RelativeSource AncestorType={x:Type vm:MainPageViewModel}}, Path=DeleteTaskCommand}"
+                            CommandParameter="{Binding .}"
+                            VerticalOptions="Center"/>
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+            <Label
+            Text="Closed Tasks"/>
+            <CollectionView
+                    ItemsSource="{Binding ClosedTasks}">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate
+                    x:DataType="{x:Type model:ToDoTask}">
+                        <Grid
+                        RowSpacing="0"
+                        ColumnDefinitions="Auto, *, Auto, Auto">
+                            <Button
+                             MinimumHeightRequest="20"
+                             MinimumWidthRequest="20"
+                             ImageSource="square_check_regular.png"
+                             BackgroundColor="Transparent"
+                             Command="{Binding Source={RelativeSource AncestorType={x:Type vm:MainPageViewModel}}, Path=ChangeStatusCommand}"
+                             CommandParameter="{Binding .}"
+                             VerticalOptions="Center"/>
+                            <Entry
+                             x:Name="entryField"
+                             Grid.Column="1"
+                             VerticalOptions="Center"
+                             IsReadOnly="{Binding IsEntryFieldReadOnly}"
+                             Text="{Binding Content}"/>
+                            <Button
+                             Grid.Column="2"
+                             MinimumHeightRequest="35"
+                             MinimumWidthRequest="35"
+                             Padding="0"
+                             Margin="3"
+                             ImageSource="pen_square_regular.png"
+                             BackgroundColor="Blue"
+                             Command="{Binding Source={RelativeSource AncestorType={x:Type vm:MainPageViewModel}}, Path=EditTaskCommand}"
+                             CommandParameter="{Binding .}"
+                             VerticalOptions="Center"/>
+                            <Button
+                             Grid.Column="3"
+                             MinimumHeightRequest="35"
+                             MinimumWidthRequest="35"
+                             Padding="0"
+                             Margin="3"
+                             ImageSource="trash_can_regular.png"
+                             BackgroundColor="Red"
+                             Command="{Binding Source={RelativeSource AncestorType={x:Type vm:MainPageViewModel}}, Path=DeleteTaskCommand}"
+                             CommandParameter="{Binding .}"
+                             VerticalOptions="Center"/>
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
 
-        <HorizontalStackLayout>
-            <Button
-                Text="Create Thousend Tasks"
-                Command="{Binding CreateThousendTasksCommand}"/>
-            <Button
-                Text="Load Thousend Tasks"
-                Command="{Binding LoadThousendTasksCommand}"/>
-            <Button
-                Text="Delete Thousend Tasks"
-                Command="{Binding DeleteThousendTasksCommand}"/>
-        </HorizontalStackLayout>
-    </VerticalStackLayout>
+            <HorizontalStackLayout>
+                <Button
+                    Text="Create Thousend Tasks"
+                    Command="{Binding CreateThousendTasksCommand}"/>
+                <Button
+                    Text="Load Thousend Tasks"
+                    Command="{Binding LoadThousendTasksCommand}"/>
+                <Button
+                    Text="Delete Thousend Tasks"
+                    Command="{Binding DeleteThousendTasksCommand}"/>
+            </HorizontalStackLayout>
+        </VerticalStackLayout>
+    </ScrollView>
 </ContentPage>
