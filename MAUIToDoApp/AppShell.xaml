@@ -14,10 +14,16 @@
             Route="MainPage" />
     </FlyoutItem>
     <FlyoutItem
-    Title="1000 Tasks">
+        Title="1000 Tasks">
         <ShellContent
-        ContentTemplate="{DataTemplate local:ThousendTasksPage}"
-        Route="ThousendTasksPage" />
+            ContentTemplate="{DataTemplate local:ThousendTasksPage}"
+            Route="ThousendTasksPage" />
+    </FlyoutItem>
+    <FlyoutItem
+        Title="Mathematical Calculation">
+        <ShellContent
+            ContentTemplate="{DataTemplate local:MathematicalCalcPage}"
+            Route="MathematicalCalcPage" />
     </FlyoutItem>
 
 </Shell>

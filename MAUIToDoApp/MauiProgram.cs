@@ -24,6 +24,8 @@ public static class MauiProgram
         builder.Services.AddSingleton<MainPageViewModel>();
         builder.Services.AddSingleton<ThousendTasksPage>();
         builder.Services.AddSingleton<ThousendTasksPageViewModel>();
+        builder.Services.AddSingleton<MathematicalCalcPage>();
+        builder.Services.AddSingleton<MathematicalCalcPageViewModel>();
 
 #if DEBUG
         builder.Logging.AddDebug();
