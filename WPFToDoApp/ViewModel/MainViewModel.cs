@@ -16,4 +16,11 @@ public partial class MainViewModel : ObservableObject
 
     [RelayCommand]
     public void OpenMathematicalCalcPage() => this.FrameContent = new MathematicalCalcPage();
+
+    [RelayCommand]
+    public void OpenChangePageView()
+    {
+        var startTime = DateTime.Now.Ticks;
+        this.FrameContent = new ChangePageView(startTime);
+    }
 }

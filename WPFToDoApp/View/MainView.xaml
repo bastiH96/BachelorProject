@@ -24,6 +24,9 @@
             <Button
                 Content="Mathematical Calculation"
                 Command="{Binding OpenMathematicalCalcPageCommand}"/>
+            <Button
+                Content="Change Page"
+                Command="{Binding OpenChangePageViewCommand}"/>
         </ListBox>
             
 
