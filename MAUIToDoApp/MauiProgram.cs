@@ -29,6 +29,8 @@ public static class MauiProgram
         builder.Services.AddSingleton<ChangePageView>();
         builder.Services.AddSingleton<SecondPageView>();
         builder.Services.AddTransient<ChangePageViewModel>();
+        builder.Services.AddSingleton<WriteReadDeleteFilePage>();
+        builder.Services.AddSingleton<WriteReadDeleteFileViewModel>();
 
 #if DEBUG
         builder.Logging.AddDebug();

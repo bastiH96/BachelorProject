@@ -31,5 +31,11 @@
             ContentTemplate="{DataTemplate local:ChangePageView}"
             Route="ChangePageView" />
     </FlyoutItem>
+    <FlyoutItem
+    Title="Write Read Delete File">
+        <ShellContent
+        ContentTemplate="{DataTemplate local:WriteReadDeleteFilePage}"
+        Route="WriteReadDeleteFilePage" />
+    </FlyoutItem>
 
 </Shell>
