@@ -1,9 +1,13 @@
-﻿namespace MAUIToDoApp;
+namespace MAUIToDoApp;
+
+using MAUIToDoApp.View;
 
 public partial class AppShell : Shell
 {
     public AppShell()
     {
-        InitializeComponent();
+        this.InitializeComponent();
+
+        Routing.RegisterRoute(nameof(SecondPageView), typeof(SecondPageView));
     }
 }

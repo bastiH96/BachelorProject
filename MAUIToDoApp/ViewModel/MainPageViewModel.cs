@@ -97,5 +97,4 @@ public partial class MainPageViewModel : ObservableObject
         this.OpenTasks = new(allTasks.Where(x => x.IsCompleted == false));
         this.ClosedTasks = new(allTasks.Where(x => x.IsCompleted));
     }
-
 }

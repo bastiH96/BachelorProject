@@ -25,5 +25,11 @@
             ContentTemplate="{DataTemplate local:MathematicalCalcPage}"
             Route="MathematicalCalcPage" />
     </FlyoutItem>
+    <FlyoutItem
+        Title="Change Page">
+            <ShellContent
+            ContentTemplate="{DataTemplate local:ChangePageView}"
+            Route="ChangePageView" />
+    </FlyoutItem>
 
 </Shell>
