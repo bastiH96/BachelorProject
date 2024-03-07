@@ -15,11 +15,10 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition />
             <RowDefinition Height="Auto"/>
-            <RowDefinition/>
-            <RowDefinition Height="Auto"/>
+            
         </Grid.RowDefinitions>
         <TextBlock
-        Text="Open Tasks"/>
+            Text="{Binding ElapsedTime}"/>
         <ListBox
         Grid.Row="1"
         ItemsSource="{Binding OpenTasks}">
@@ -32,107 +31,38 @@
                             <ColumnDefinition Width="Auto"/>
                             <ColumnDefinition Width="Auto"/>
                         </Grid.ColumnDefinitions>
-                        <CheckBox
-                        IsChecked="False"
-                        Command="{Binding RelativeSource={RelativeSource AncestorType={x:Type Page}}, Path=DataContext.ChangeStatusCommand}"
-                        CommandParameter="{Binding .}"/>
                         <TextBox
-                        Grid.Column="1"
-                        IsReadOnly="{Binding IsEntryFieldReadOnly}"
-                        Text="{Binding Content}"/>
-                        <Button
-                        Grid.Column="2"
-                        Height="25"
-                        Width="25"
-                        Padding="0"
-                        Margin="3"
-                        Command="{Binding RelativeSource={RelativeSource AncestorType={x:Type Page}}, Path=DataContext.EditTaskCommand}"
-                        CommandParameter="{Binding .}">
-                            <Image Source="../Images/pen_square_regular.png"/>
-                        </Button>
-                        <Button
-                        Grid.Column="3"
-                        Height="25"
-                        Width="25"
-                        Padding="0"
-                        Margin="3"
-                        Command="{Binding RelativeSource={RelativeSource AncestorType={x:Type Page}}, Path=DataContext.DeleteTaskCommand}"
-                        CommandParameter="{Binding .}">
-                            <Image
-                            Source="../Images/trash_can_regular.png"/>
-                        </Button>
-                    </Grid>
-                </DataTemplate>
-            </ListBox.ItemTemplate>
-        </ListBox>
-        <TextBlock
-        Grid.Row="2"
-        Text="Closed Tasks"/>
-        <ListBox
-        Grid.Row="3"
-        ItemsSource="{Binding ClosedTasks}">
-            <ListBox.ItemTemplate>
-                <DataTemplate>
-                    <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="Auto"/>
-                            <ColumnDefinition />
-                            <ColumnDefinition Width="Auto"/>
-                            <ColumnDefinition Width="Auto"/>
-                        </Grid.ColumnDefinitions>
-                        <CheckBox
-                        IsChecked="True"
-                        Command="{Binding RelativeSource={RelativeSource AncestorType={x:Type Page}}, Path=DataContext.ChangeStatusCommand}"
-                        CommandParameter="{Binding .}"/>
-                        <TextBox
-                        Grid.Column="1"
-                        IsReadOnly="{Binding IsEntryFieldReadOnly}"
-                        Text="{Binding Content}"/>
-                        <Button
-                        Grid.Column="2"
-                        Height="25"
-                        Width="25"
-                        Padding="0"
-                        Margin="3"
-                        Command="{Binding RelativeSource={RelativeSource AncestorType={x:Type Page}}, Path=DataContext.EditTaskCommand}"
-                        CommandParameter="{Binding .}">
-                            <Image
-                            Source="../Images/pen_square_regular.png"/>
-                        </Button>
-                        <Button
-                        Grid.Column="3"
-                        Height="25"
-                        Width="25"
-                        Padding="0"
-                        Margin="3"
-                        Command="{Binding RelativeSource={RelativeSource AncestorType={x:Type Page}}, Path=DataContext.DeleteTaskCommand}"
-                        CommandParameter="{Binding .}">
-                            <Image
-                            Source="../Images/trash_can_regular.png"/>
-                        </Button>
+                            Grid.Column="1"
+                            IsReadOnly="{Binding IsEntryFieldReadOnly}"
+                            Text="{Binding Content}"/>
                     </Grid>
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
 
         <Grid
-            Grid.Row="4">
+            Grid.Row="2">
             <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
                 <ColumnDefinition/>
                 <ColumnDefinition/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
             <Button
-                Content="Create 1000 Tasks"
-                Command="{Binding CreateThousendTasksCommand}"/>
+                Content="Create Thousend Tasks for Database"
+                Command="{Binding CreateThousendTasksForDbCommand}"/>
             <Button
                 Grid.Column="1"
-                Content="Load 1000 Tasks"
-                Command="{Binding LoadThousendTasksCommand}"/>
+                Content="Empty List"
+                Command="{Binding EmptyListCommand}"/>
             <Button
                 Grid.Column="2"
-                Content="Delete 1000 Tasks"
-                Command="{Binding DeleteThousendTasksCommand}"/>
+                Content="Create Thousend Tasks Directly"
+                Command="{Binding CreateThousendTasksCommand}"/>
+            <Button
+                Grid.Column="3"
+                Content="Load Thousend Tasks from Db"
+                Command="{Binding LoadThousendTasksFromDbCommand}"/>
         </Grid>
         
     </Grid>
