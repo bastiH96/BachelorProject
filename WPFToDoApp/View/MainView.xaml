@@ -27,6 +27,9 @@
             <Button
                 Content="Change Page"
                 Command="{Binding OpenChangePageViewCommand}"/>
+            <Button
+                Content="Write Read Delete File"
+                Command="{Binding OpenWriteReadDeleteFilePageCommand}"/>
         </ListBox>
             
 

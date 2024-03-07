@@ -23,4 +23,7 @@ public partial class MainViewModel : ObservableObject
         var startTime = DateTime.Now.Ticks;
         this.FrameContent = new ChangePageView(startTime);
     }
+
+    [RelayCommand]
+    public void OpenWriteReadDeleteFilePage() => this.FrameContent = new WriteReadDeleteFilePage();
 }
