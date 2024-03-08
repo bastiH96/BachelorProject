@@ -7,7 +7,7 @@ using CommunityToolkit.Mvvm.Input;
 
 public partial class WriteReadDeleteFileViewModel : ObservableObject
 {
-    [ObservableProperty] private string elapsedTime;
+    [ObservableProperty] private string? elapsedTime;
 
     [RelayCommand]
     public async Task FileWriteReadDeleteAsync()
@@ -27,7 +27,7 @@ public partial class WriteReadDeleteFileViewModel : ObservableObject
             File.Delete(filePath);
         }
         stopwatch.Stop();
-        this.ElapsedTime = stopwatch.ElapsedMilliseconds.ToString();
+        this.ElapsedTime = $"{stopwatch.ElapsedMilliseconds}";
         stopwatch.Reset();
     }
 }

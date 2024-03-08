@@ -35,7 +35,7 @@ public partial class DownloadFileViewModel : ObservableObject
             this.ElapsedTime = $"{stopwatch.ElapsedMilliseconds}";
             stopwatch.Reset();
         }
-        catch (Exception ex)
+        catch (Exception)
         {
             // Handle exceptions
         }

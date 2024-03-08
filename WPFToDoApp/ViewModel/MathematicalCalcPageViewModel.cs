@@ -6,7 +6,7 @@ using CommunityToolkit.Mvvm.Input;
 
 public partial class MathematicalCalcPageViewModel : ObservableObject
 {
-    [ObservableProperty] private string? stopwatchTime;
+    [ObservableProperty] private string? elapsedTime;
 
     [RelayCommand]
     private async Task MathematicalCalc()
@@ -42,7 +42,7 @@ public partial class MathematicalCalcPageViewModel : ObservableObject
             await Task.WhenAll(tasks);
         }
         stopwatch.Stop();
-        this.StopwatchTime = $"{stopwatch.Elapsed.Milliseconds}";
+        this.ElapsedTime = $"{stopwatch.Elapsed.Milliseconds}";
         stopwatch.Reset();
     }
 }

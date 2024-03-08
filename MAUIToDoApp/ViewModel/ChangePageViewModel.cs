@@ -9,10 +9,10 @@ using WpfMauiLibrary.Models;
 
 public partial class ChangePageViewModel : ObservableObject, IQueryAttributable
 {
-    [ObservableProperty] private string elapsedTime;
-    [ObservableProperty] private ObservableCollection<ToDoTask> openTasks = new();
-    [ObservableProperty] private ObservableCollection<ToDoTask> closedTasks = new();
-    private Stopwatch stopwatch = new();
+    [ObservableProperty] private string? elapsedTime;
+    [ObservableProperty] private ObservableCollection<ToDoTask> openTasks = [];
+    [ObservableProperty] private ObservableCollection<ToDoTask> closedTasks = [];
+    private readonly Stopwatch stopwatch = new();
 
     [RelayCommand]
     public async Task ChangePage()

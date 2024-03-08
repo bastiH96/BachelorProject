@@ -29,7 +29,7 @@ public partial class WriteReadDeleteFileViewModel : ObservableObject
             File.Delete(filePath);
         }
         stopwatch.Stop();
-        this.ElapsedTime = stopwatch.ElapsedMilliseconds.ToString();
+        this.ElapsedTime = $"{stopwatch.ElapsedMilliseconds}";
         stopwatch.Reset();
     }
 }
