@@ -28,14 +28,20 @@
     <FlyoutItem
         Title="Change Page">
             <ShellContent
-            ContentTemplate="{DataTemplate local:ChangePageView}"
-            Route="ChangePageView" />
+                ContentTemplate="{DataTemplate local:ChangePageView}"
+                Route="ChangePageView" />
     </FlyoutItem>
     <FlyoutItem
-    Title="Write Read Delete File">
-        <ShellContent
-        ContentTemplate="{DataTemplate local:WriteReadDeleteFilePage}"
-        Route="WriteReadDeleteFilePage" />
+        Title="Write Read Delete File">
+            <ShellContent
+                ContentTemplate="{DataTemplate local:WriteReadDeleteFilePage}"
+                Route="WriteReadDeleteFilePage" />
+    </FlyoutItem>
+    <FlyoutItem
+        Title="Download File">
+            <ShellContent
+                ContentTemplate="{DataTemplate local:DownloadFilePage}"
+                Route="DownloadFilePage" />
     </FlyoutItem>
 
 </Shell>

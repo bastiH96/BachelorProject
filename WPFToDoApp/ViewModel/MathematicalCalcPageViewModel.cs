@@ -6,14 +6,9 @@ using CommunityToolkit.Mvvm.Input;
 
 public partial class MathematicalCalcPageViewModel : ObservableObject
 {
-    [ObservableProperty] private string stopwatchTime;
+    [ObservableProperty] private string? stopwatchTime;
 
-    public MathematicalCalcPageViewModel() => this.CalculateCommand = new AsyncRelayCommand(this.Calculate);
-
-    public IAsyncRelayCommand CalculateCommand { get; }
-
-
-    private Task Calculate() => this.MathematicalCalc();
+    [RelayCommand]
     private async Task MathematicalCalc()
     {
         var stopwatch = new Stopwatch();
@@ -35,8 +30,6 @@ public partial class MathematicalCalcPageViewModel : ObservableObject
                 return sum * 4;
             }
 
-
-
             for (var i = 0; i < 10; i++)
             {
                 tasks.Add(Task.Run(() =>
@@ -49,7 +42,7 @@ public partial class MathematicalCalcPageViewModel : ObservableObject
             await Task.WhenAll(tasks);
         }
         stopwatch.Stop();
-        this.StopwatchTime = stopwatch.Elapsed.Milliseconds.ToString();
+        this.StopwatchTime = $"{stopwatch.Elapsed.Milliseconds}";
         stopwatch.Reset();
     }
 }

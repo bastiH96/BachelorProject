@@ -30,9 +30,11 @@
             <Button
                 Content="Write Read Delete File"
                 Command="{Binding OpenWriteReadDeleteFilePageCommand}"/>
+            <Button
+                Content="Download File"
+                Command="{Binding DownloadFilePageCommand}"/>
         </ListBox>
             
-
         <Frame 
          Grid.Column="1" 
          NavigationUIVisibility="Hidden"

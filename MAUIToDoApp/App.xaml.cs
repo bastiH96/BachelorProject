@@ -1,11 +1,10 @@
-﻿namespace MAUIToDoApp;
+namespace MAUIToDoApp;
 
 public partial class App : Application
 {
     public App()
     {
-        InitializeComponent();
-
-        MainPage = new AppShell();
+        this.InitializeComponent();
+        this.MainPage = new AppShell();
     }
 }

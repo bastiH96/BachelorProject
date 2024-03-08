@@ -1,28 +1,34 @@
 namespace MAUIToDoApp.ViewModel;
 
+using System.Collections.ObjectModel;
+using System.Diagnostics;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using MAUIToDoApp.View;
+using WpfMauiLibrary.Models;
 
 public partial class ChangePageViewModel : ObservableObject, IQueryAttributable
 {
     [ObservableProperty] private string elapsedTime;
+    [ObservableProperty] private ObservableCollection<ToDoTask> openTasks = new();
+    [ObservableProperty] private ObservableCollection<ToDoTask> closedTasks = new();
+    private Stopwatch stopwatch = new();
 
     [RelayCommand]
     public async Task ChangePage()
     {
-        IDictionary<string, object> startTime = new Dictionary<string, object>()
+        this.stopwatch.Start();
+        await Shell.Current.GoToAsync(nameof(SecondPageView));
+        IDictionary<string, object> queryData = new Dictionary<string, object>()
         {
-            {"startTime", DateTime.Now.Ticks }
+            {"stopwatch", "data" }
         };
-        await Shell.Current.GoToAsync(nameof(SecondPageView), startTime);
+        await Shell.Current.GoToAsync(nameof(SecondPageView), queryData);
     }
 
     public void ApplyQueryAttributes(IDictionary<string, object> query)
     {
-        var startTime = (long)query["startTime"];
-        var endTime = DateTime.Now.Ticks;
-        var timeSpan = (endTime - startTime) / TimeSpan.TicksPerMillisecond;
-        this.ElapsedTime = timeSpan.ToString();
+        this.stopwatch.Stop();
+        this.ElapsedTime = $"{this.stopwatch.ElapsedMilliseconds}";
     }
 }

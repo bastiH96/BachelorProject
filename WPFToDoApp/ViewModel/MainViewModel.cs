@@ -1,5 +1,6 @@
 namespace WPFToDoApp.ViewModel;
 
+using System.Diagnostics;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using WPFToDoApp.View;
@@ -20,10 +21,14 @@ public partial class MainViewModel : ObservableObject
     [RelayCommand]
     public void OpenChangePageView()
     {
-        var startTime = DateTime.Now.Ticks;
-        this.FrameContent = new ChangePageView(startTime);
+        var stopwatch = new Stopwatch();
+        stopwatch.Start();
+        this.FrameContent = new ChangePageView(stopwatch);
     }
 
     [RelayCommand]
     public void OpenWriteReadDeleteFilePage() => this.FrameContent = new WriteReadDeleteFilePage();
+
+    [RelayCommand]
+    public void DownloadFilePage() => this.FrameContent = new DownloadFilePage();
 }

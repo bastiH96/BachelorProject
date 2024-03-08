@@ -28,10 +28,11 @@ public static class MauiProgram
         builder.Services.AddSingleton<MathematicalCalcPageViewModel>();
         builder.Services.AddSingleton<ChangePageView>();
         builder.Services.AddSingleton<SecondPageView>();
-        builder.Services.AddTransient<ChangePageViewModel>();
+        builder.Services.AddSingleton<ChangePageViewModel>();
         builder.Services.AddSingleton<WriteReadDeleteFilePage>();
         builder.Services.AddSingleton<WriteReadDeleteFileViewModel>();
-
+        builder.Services.AddSingleton<DownloadFilePage>();
+        builder.Services.AddSingleton<DownloadFileViewModel>();
 #if DEBUG
         builder.Logging.AddDebug();
 #endif
