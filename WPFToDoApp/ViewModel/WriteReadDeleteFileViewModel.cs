@@ -6,10 +6,9 @@ using System.Threading.Tasks;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 
-
 public partial class WriteReadDeleteFileViewModel : ObservableObject
 {
-    [ObservableProperty] private string elapsedTime;
+    [ObservableProperty] private string? elapsedTime;
 
     [RelayCommand]
     public async Task FileWriteReadDeleteAsync()

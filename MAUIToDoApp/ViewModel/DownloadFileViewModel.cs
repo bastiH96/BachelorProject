@@ -1,8 +1,7 @@
 namespace MAUIToDoApp.ViewModel;
 
-using System;
 using System.Diagnostics;
-using System.Threading.Tasks;
+using System.Net.Http;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 
@@ -40,5 +39,4 @@ public partial class DownloadFileViewModel : ObservableObject
             // Handle exceptions
         }
     }
-
 }

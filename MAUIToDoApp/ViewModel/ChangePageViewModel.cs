@@ -1,17 +1,13 @@
 namespace MAUIToDoApp.ViewModel;
 
-using System.Collections.ObjectModel;
 using System.Diagnostics;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using MAUIToDoApp.View;
-using WpfMauiLibrary.Models;
 
 public partial class ChangePageViewModel : ObservableObject, IQueryAttributable
 {
     [ObservableProperty] private string? elapsedTime;
-    [ObservableProperty] private ObservableCollection<ToDoTask> openTasks = [];
-    [ObservableProperty] private ObservableCollection<ToDoTask> closedTasks = [];
     private readonly Stopwatch stopwatch = new();
 
     [RelayCommand]
