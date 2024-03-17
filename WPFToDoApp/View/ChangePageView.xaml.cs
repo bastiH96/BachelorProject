@@ -6,9 +6,9 @@ using WPFToDoApp.ViewModel;
 
 public partial class ChangePageView : Page
 {
-    public ChangePageView(Stopwatch stopwatch)
+    public ChangePageView()
     {
         this.InitializeComponent();
-        this.DataContext = new ChangePageViewModel(stopwatch);
+        this.DataContext = new ChangePageViewModel();
     }
 }

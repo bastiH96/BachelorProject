@@ -11,7 +11,15 @@
       Title="ChangePageView">
 
     <Grid>
-        <TextBlock
-            Text="{Binding ElapsedTime}"/>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Button
+            Content="ChangePage"
+            Command="{Binding ChangePageCommand}"/>
+        <Frame
+            Grid.Row="1"
+            Content="{Binding FrameContent}"/>
     </Grid>
 </Page>

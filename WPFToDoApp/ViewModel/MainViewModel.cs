@@ -19,12 +19,7 @@ public partial class MainViewModel : ObservableObject
     public void OpenMathematicalCalcPage() => this.FrameContent = new MathematicalCalcPage();
 
     [RelayCommand]
-    public void OpenChangePageView()
-    {
-        var stopwatch = new Stopwatch();
-        stopwatch.Start();
-        this.FrameContent = new ChangePageView(stopwatch);
-    }
+    public void OpenChangePageView() => this.FrameContent = new ChangePageView();
 
     [RelayCommand]
     public void OpenWriteReadDeleteFilePage() => this.FrameContent = new WriteReadDeleteFilePage();
